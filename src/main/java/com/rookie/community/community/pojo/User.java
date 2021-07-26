@@ -1,4 +1,6 @@
-package com.rookie.community.community.dao;
+package com.rookie.community.community.pojo;
+
+import java.io.Serializable;
 
 /**
  * @author HeXianGang
@@ -6,14 +8,14 @@ package com.rookie.community.community.dao;
  * @create 2021-07-13 21:22
  */
 
-public class User {
+public class User implements Serializable {
 
     private Integer id;
     private String account_id;
     private String name;
     private String token;
-    private String gmt_create;
-    private String gmt_modified;
+    private Long gmt_create;
+    private Long gmt_modified;
 
     public Integer getId() {
         return id;
@@ -47,19 +49,19 @@ public class User {
         this.token = token;
     }
 
-    public String getGmt_create() {
+    public Long getGmt_create() {
         return gmt_create;
     }
 
-    public void setGmt_create(String gmt_create) {
+    public void setGmt_create(Long gmt_create) {
         this.gmt_create = gmt_create;
     }
 
-    public String getGmt_modified() {
+    public Long getGmt_modified() {
         return gmt_modified;
     }
 
-    public void setGmt_modified(String gmt_modified) {
+    public void setGmt_modified(Long gmt_modified) {
         this.gmt_modified = gmt_modified;
     }
 
