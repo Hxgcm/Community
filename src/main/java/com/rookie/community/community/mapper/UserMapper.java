@@ -20,6 +20,11 @@ public interface UserMapper {
     @Insert("insert into user(account_id, name, token, gmt_create, gmt_modified) values (#{account_id}, #{name}, #{token}, #{gmt_create}, #{gmt_modified})")
     public void insertUser(User user);
 
+    /**
+     * 根据token查找用户的信息
+     * @param token
+     * @return
+     */
     @Select("select * from user where token = #{token}")
     User findByToken(@Param("token") String token);
 }
