@@ -1,5 +1,6 @@
 package com.rookie.community.community.dto;
 
+
 /**
  * @author HeXianGang
  * @description AccessToken
@@ -12,8 +13,6 @@ public class AccessTokenDTO {
     private String code;
     private String redirect_uri;
     private String state;
-
-
 
     public String getClient_id() {
         return client_id;

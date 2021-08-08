@@ -72,6 +72,19 @@
             <version>2.2.0</version>
         </dependency>
 
+        <!-- 引入测试类 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--        &lt;!&ndash;使用Lombok插件，简化实体类的get和set方法&ndash;&gt;
+                <dependency>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                    <version>1.18.20</version>
+                    <scope>provided</scope>
+                </dependency>-->
     </dependencies>
 
     <!-- -->

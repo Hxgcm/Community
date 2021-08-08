@@ -54,16 +54,16 @@ public class AuthorizeController {
         String accessToken = gitHubProvider.getAccessToken(accessTokenDTO);
         GitHubUser gitHubUser = gitHubProvider.getGitHubUser(accessToken);
         System.out.println(gitHubUser.getName());
-        if (gitHubUser != null ) {
+        if (gitHubUser.getId() != null) {
             // 如果用户不为空，则登录成功
             User user = new User();
             user.setToken(UUID.randomUUID().toString());
             user.setName(gitHubUser.getName());
-            user.setAccount_id(String.valueOf(gitHubUser.getId()));
-            user.setGmt_create(System.currentTimeMillis());
-            user.setGmt_modified(user.getGmt_create());
+            user.setAccountId(String.valueOf(gitHubUser.getId()));
+            user.setGmtCreate(System.currentTimeMillis());
+            user.setGmtModified(user.getGmtCreate());
             userMapper.insertUser(user);
-            request.getSession().setAttribute("user", gitHubUser);
+            request.getSession().setAttribute("user", user);
             return "redirect:/";
         } else {
             return "redirect:/";

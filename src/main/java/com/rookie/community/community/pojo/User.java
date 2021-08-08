@@ -1,5 +1,6 @@
 package com.rookie.community.community.pojo;
 
+
 import java.io.Serializable;
 
 /**
@@ -7,15 +8,15 @@ import java.io.Serializable;
  * @description 登录用户的实体类
  * @create 2021-07-13 21:22
  */
-
 public class User implements Serializable {
 
     private Integer id;
-    private String account_id;
+    private String accountId;
     private String name;
     private String token;
-    private Long gmt_create;
-    private Long gmt_modified;
+    private Long gmtCreate;
+    private Long gmtModified;
+    private String avatarUrl;
 
     public Integer getId() {
         return id;
@@ -25,12 +26,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getAccount_id() {
-        return account_id;
+    public String getAccountId() {
+        return accountId;
     }
 
-    public void setAccount_id(String account_id) {
-        this.account_id = account_id;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     public String getName() {
@@ -49,31 +50,27 @@ public class User implements Serializable {
         this.token = token;
     }
 
-    public Long getGmt_create() {
-        return gmt_create;
+    public Long getGmtCreate() {
+        return gmtCreate;
     }
 
-    public void setGmt_create(Long gmt_create) {
-        this.gmt_create = gmt_create;
+    public void setGmtCreate(Long gmtCreate) {
+        this.gmtCreate = gmtCreate;
     }
 
-    public Long getGmt_modified() {
-        return gmt_modified;
+    public Long getGmtModified() {
+        return gmtModified;
     }
 
-    public void setGmt_modified(Long gmt_modified) {
-        this.gmt_modified = gmt_modified;
+    public void setGmtModified(Long gmtModified) {
+        this.gmtModified = gmtModified;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", account_id='" + account_id + '\'' +
-                ", name='" + name + '\'' +
-                ", token='" + token + '\'' +
-                ", gmt_create='" + gmt_create + '\'' +
-                ", gmt_modified='" + gmt_modified + '\'' +
-                '}';
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 }

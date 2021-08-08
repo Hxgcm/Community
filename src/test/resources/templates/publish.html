@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>菜鸟社区</title>
+    <title>发起问题 - 菜鸟社区</title>
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../static/css/bootstrap-theme.css" />
-    <link rel="stylesheet" href="../static/css/homepageCustom.css">
+    <link rel="stylesheet" href="../static/css/homepageCustom.css" />
     <script type="application/javascript" src="../static/js/jquery-3.5.1.min.js"></script>
     <script type="application/javascript" src="../static/js/bootstrap.min.js"></script>
 </head>
@@ -51,32 +51,43 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-
-
-<!-- 问题列表 -->
+<!-- 发起问题 -->
 <div class="container-fluid main">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h3><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span> 发现</h3>
+            <h3><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span> 发起问题</h3>
             <hr>
-            <div class="media" th:each="question:${questions}">
-                <div class="media-left">
-                    <a href="#">
-                        <img class="media-object" th:src="${question.user.avatarUrl}" alt="网络延迟...">
-                    </a>
+            <form method="post" action="/publish">
+                <div>
+                    <div class="form-group">
+                        <label for="title">问题标题（简单扼要）：</label>
+                        <input type="text" class="form-control" id="title" name="title" th:value="${title}" placeholder="问题标题...">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">问题补充（必填，请按照右侧提示）：</label>
+                        <textarea class="form-control" name="description" id="description" cols="3" rows="10" value =  th:value="${description}" ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tag">添加标签：</label>
+                        <input type="text" class="form-control" name="tag" id="tag" cols="3" rows="10" th:value="${tag}" placeholder="输入标签，以“，” 分隔...">
+                    </div>
+                    <span class="alert alert-danger" th:if="${error != null}" th:text="${error}"></span>
+                    <!-- Indicates a successful or positive action -->
+                    <button type="submit" class="btn btn-success btn-publish">发布</button>
                 </div>
-                <div class="media-object">
-                    <h4 class="media-heading" th:text="${question.title}"></h4>
-                    <span th:text="${question.description}"></span>
-                    <div class="text-desc"><span th:text="${question.commentCount}"></span> 个回复 · <span th:text="${question.viewCount}"></span> 次浏览 · <span th:text="${#calendars.format(question.gmtModified, 'yyyy-MM-dd HH:mm:ss')}"></span></div>
-                </div>
-            </div>
+            </form>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <h3>发起问题指南</h3>
-
+            
         </div>
     </div>
 </div>
+
+
+
+
+
+
 </body>
 </html>

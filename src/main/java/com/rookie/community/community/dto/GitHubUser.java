@@ -1,5 +1,6 @@
 package com.rookie.community.community.dto;
 
+
 /**
  * @author HeXianGang
  * @description GitHub登录用户实体类
@@ -42,15 +43,5 @@ public class GitHubUser {
 
     public void setAvatar_url(String avatar_url) {
         this.avatar_url = avatar_url;
-    }
-
-    @Override
-    public String toString() {
-        return "GitHubUser{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                ", bio='" + bio + '\'' +
-                ", avatar_url='" + avatar_url + '\'' +
-                '}';
     }
 }
